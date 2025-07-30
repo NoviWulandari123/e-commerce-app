@@ -4,12 +4,14 @@ const app = express();
 
 // Import routes
 const productRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // Middleware
 app.use(express.json()); // Middleware untuk parsing JSON body
 
 // Routes
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 
 // Rute dasar
 app.get('/', (req, res) => {
